@@ -1,14 +1,12 @@
+let userArray = [];
 const gallery = document.querySelector('#gallery');
 
 
-// create elements to display the results from api
-
+// create functions which display the API results
 
 function galleryDisplay(data) {
-    let div;
     for(let i = 0; i < data.length; i++) {
         gallery.append(cardDisplay(data[i]));
-        console.log(data.length)
     }
 }
 
@@ -24,16 +22,26 @@ function cardDisplay(data) {
             <h3 id='name' class='card-name'>${data.name.first} ${data.name.second}</h3>
             <p class='card-text'>${data.email}</p>
             <p class='card-text cap'>${data.location.city}, ${data.location.state}</p>
-        </div>
-        
+        </div>     
         `;
 
     return div;        
 }
 
 
+function resultPush(data) {
+    for(const element of data) {
+        userArray.push(element);
+    }
+
+    galleryDisplay(userArray);
+}
+
+
+
+
 // fetch
 
 fetch('https://randomuser.me/api/?results=12&nat=gb&name&location')
     .then(response => response.json())
-    .then(data => galleryDisplay(data.results))
+    .then(data => resultPush(data.results))
