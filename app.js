@@ -2,6 +2,8 @@ let userArray = [];
 const gallery = document.querySelector('#gallery');
 
 
+
+
 // create functions which display the API results
 
 function galleryDisplay(data) {
@@ -16,10 +18,10 @@ function cardDisplay(data) {
     div.classList.add('card');
     div.innerHTML = `
         <div class='card-img-container'>
-            <img class='card-img' src=${data.picture.medium} alt='profile picture'>
+            <img class='card-img' src=${data.pictures} alt='profile picture'>
         </div>
         <div class='card-info-container'>
-            <h3 id='name' class='card-name'>${data.name.first} ${data.name.second}</h3>
+            <h3 id='name' class='card-name'>${data.name}</h3>
             <p class='card-text'>${data.email}</p>
             <p class='card-text cap'>${data.location.city}, ${data.location.state}</p>
         </div>     
@@ -30,11 +32,24 @@ function cardDisplay(data) {
 
 
 function resultPush(data) {
-    for(const element of data) {
-        userArray.push(element);
+    for(let i = 0; i < data.length; i++) {
+        let Newdata = data[i];
+        userArray.push({name: `${Newdata.name.first} ${Newdata.name.last}`,
+                        email: `${Newdata.email}`,
+                        pictures:  `${Newdata.picture.medium}`,
+                        location: {
+                                    city: `${Newdata.location.city}`,
+                                    country: `${Newdata.location.country}`,
+                                    postcode: `${Newdata.location.postcode}`,
+                                    state: `${Newdata.location.state}`,
+                                    street: `${Newdata.location.street.number} ${Newdata.location.street.name}`
+                                    },
+                        phone: `${Newdata.phone}`,
+                        bday: `${Newdata.dob.date}`
+                        });
     }
 
-    galleryDisplay(userArray);
+galleryDisplay(userArray);
 }
 
 
