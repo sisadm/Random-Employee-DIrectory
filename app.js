@@ -31,20 +31,21 @@ function insertAfter(referenceNode, newNode) {
     referenceNode.parentNode.insertBefore(newNode, referenceNode.nextSibling);
   }
 
- modalPart();
+// modalPart();
 
 // create functions which display the API results
 
 function galleryDisplay(data) {
     for(let i = 0; i < data.length; i++) {
-        gallery.append(cardDisplay(data[i]));
+        gallery.append(cardDisplay(data[i], i));
     }
 }
 
 
-function cardDisplay(data) {
+function cardDisplay(data, num) {
     let div = document.createElement('div');
     div.classList.add('card');
+    div.setAttribute('id', num);
     div.innerHTML = `
         <div class='card-img-container'>
             <img class='card-img' src=${data.pictures} alt='profile picture'>
