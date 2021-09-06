@@ -1,8 +1,37 @@
 let userArray = [];
 const gallery = document.querySelector('#gallery');
+const body = document.querySelector('body');
 
 
+// create modal and display on the page
 
+function modalPart() {
+    let modalDiv = document.createElement('div');
+    modalDiv.classList.add('modal-container');
+    modalDiv.innerHTML = `
+        <div class='modal'>
+            <button type='button' id='modal-close-btn' class='modal-close-btn'><strong>X</strong></button>
+            <div class='modal-info-container'>
+                <img class="modal-img" src="" alt="profile picture">
+                <h3 id="name" class="modal-name cap"></h3>
+                <p class="modal-text" id='email'>l</p>
+                <p class="modal-text cap" id='city'></p>
+                <hr>
+                <p class="modal-text" id='tel'></p>
+                <p class="modal-text" id='location'></p>
+                <p class="modal-text" id='bday'></p>
+            </div>
+        </div>
+    `;
+    insertAfter(gallery, modalDiv);
+}
+
+// insert element after.
+function insertAfter(referenceNode, newNode) {
+    referenceNode.parentNode.insertBefore(newNode, referenceNode.nextSibling);
+  }
+
+ modalPart();
 
 // create functions which display the API results
 
@@ -45,7 +74,8 @@ function resultPush(data) {
                                     street: `${Newdata.location.street.number} ${Newdata.location.street.name}`
                                     },
                         phone: `${Newdata.phone}`,
-                        bday: `${Newdata.dob.date}`
+                        bday: `${Newdata.dob.date}`,
+                        display: `true`
                         });
     }
 
@@ -59,4 +89,4 @@ galleryDisplay(userArray);
 
 fetch('https://randomuser.me/api/?results=12&nat=gb&name&location')
     .then(response => response.json())
-    .then(data => resultPush(data.results))
+    .then(data => resultPush(data.results));
