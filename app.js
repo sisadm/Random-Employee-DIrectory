@@ -8,6 +8,7 @@ const body = document.querySelector('body');
 function modalPart() {
     let modalDiv = document.createElement('div');
     modalDiv.classList.add('modal-container');
+    modalDiv.setAttribute('style', 'display: none');
     modalDiv.innerHTML = `
         <div class='modal'>
             <button type='button' id='modal-close-btn' class='modal-close-btn'><strong>X</strong></button>
@@ -31,7 +32,7 @@ function insertAfter(referenceNode, newNode) {
     referenceNode.parentNode.insertBefore(newNode, referenceNode.nextSibling);
   }
 
-// modalPart();
+modalPart();
 
 // create functions which display the API results
 
@@ -90,4 +91,6 @@ galleryDisplay(userArray);
 
 fetch('https://randomuser.me/api/?results=12&nat=gb&name&location')
     .then(response => response.json())
-    .then(data => resultPush(data.results));
+    .then(data => resultPush(data.results))
+    .catch((error) => {
+        console.error('Error:', error)});
