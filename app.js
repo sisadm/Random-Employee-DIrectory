@@ -34,6 +34,17 @@ function insertAfter(referenceNode, newNode) {
 
 modalPart();
 
+
+
+// event listener 
+
+gallery.addEventListener('click', e => {
+    if(e.target.classList == 'card' || 'card-img-container' || 'card-img' || 'card-name' || 'card-text') {
+        console.log('aa')
+
+    }
+});
+
 // create functions which display the API results
 
 function galleryDisplay(data) {
