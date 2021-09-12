@@ -1,11 +1,20 @@
 let userArray = [];
 const gallery = document.querySelector('#gallery');
 const body = document.querySelector('body');
+const modalDiv = document.querySelector('.modal-container');
+const modalImg = document.querySelector('modal-img');
+const modalName = document.querySelector('.modal-name');
+const modalEmail = document.querySelector('#email');
+const modalCity = document.querySelector('#city');
+const modalTel = document.querySelector('#tel');
+const modalLoc = document.querySelector('#location');
+const modalBday = document.querySelector('#bday');
+
 
 
 // Functions
 
-// create modal and display on the page
+// create modal and add to the page
 
 function modalPart() {
     let modalDiv = document.createElement('div');
@@ -86,6 +95,15 @@ function resultPush(data) {
 galleryDisplay(userArray);
 }
 
+// display clicked card to modal
+
+function modalDisplay(id) {
+    const arrayElement = userArray[id];
+    modalDiv.style.display == 'block';
+    modalImg.setAttribute('src', arrayElement.pictures);
+
+}
+
 
 
 // function calls
@@ -103,14 +121,14 @@ gallery.addEventListener('click', e => {
             if(e.target.classList == 'card-img' || e.target.classList == 'card-text' ||
                 e.target.classList == 'card-name') {
 
-                console.log(e.target.parentNode.parentNode.getAttribute('id'))
+                modalDisplay(e.target.parentNode.parentNode.getAttribute('id'))
 
             } else if(e.target.classList == 'card-img-container' || e.target.classList == 'card-info-container') {
 
-                console.log(e.target.parentNode.getAttribute('id'))
+                modalDisplay(e.target.parentNode.getAttribute('id'))
 
             } else {
-                console.log(e.target.getAttribute('id'));
+                modalDisplay(e.target.getAttribute('id'));
             }
         
 
