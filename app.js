@@ -3,6 +3,8 @@ const gallery = document.querySelector('#gallery');
 const body = document.querySelector('body');
 
 
+// Functions
+
 // create modal and display on the page
 
 function modalPart() {
@@ -32,20 +34,7 @@ function insertAfter(referenceNode, newNode) {
     referenceNode.parentNode.insertBefore(newNode, referenceNode.nextSibling);
   }
 
-modalPart();
 
-
-
-// event listener 
-
-gallery.addEventListener('click', e => {
-    if(e.target.classList == 'card' || e.target.classList == 'card-img' ||
-        e.target.classList == 'card-img-container' || e.target.classList == 'card-info-container' ||
-        e.target.classList == 'card-text' || e.target.classList == 'card-name' ) {
-        console.log(e.target)
-
-    }
-});
 
 // create functions which display the API results
 
@@ -54,7 +43,6 @@ function galleryDisplay(data) {
         gallery.append(cardDisplay(data[i], i));
     }
 }
-
 
 function cardDisplay(data, num) {
     let div = document.createElement('div');
@@ -74,6 +62,7 @@ function cardDisplay(data, num) {
     return div;        
 }
 
+// create object value of array 
 
 function resultPush(data) {
     for(let i = 0; i < data.length; i++) {
@@ -96,6 +85,39 @@ function resultPush(data) {
 
 galleryDisplay(userArray);
 }
+
+
+
+// function calls
+
+modalPart();
+
+// event listener 
+
+gallery.addEventListener('click', e => {
+    if(e.target.classList == 'card' || e.target.classList == 'card-img' ||
+        e.target.classList == 'card-img-container' || e.target.classList == 'card-info-container' ||
+        e.target.classList == 'card-text' || e.target.classList == 'card-name' ) 
+        {
+
+            if(e.target.classList == 'card-img' || e.target.classList == 'card-text' ||
+                e.target.classList == 'card-name') {
+
+                console.log(e.target.parentNode.parentNode.getAttribute('id'))
+
+            } else if(e.target.classList == 'card-img-container' || e.target.classList == 'card-info-container') {
+
+                console.log(e.target.parentNode.getAttribute('id'))
+
+            } else {
+                console.log(e.target.getAttribute('id'));
+            }
+        
+
+    }
+});
+
+
 
 
 
