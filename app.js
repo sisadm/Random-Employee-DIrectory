@@ -39,8 +39,10 @@ modalPart();
 // event listener 
 
 gallery.addEventListener('click', e => {
-    if(e.target.classList == 'card' || 'card-img-container' || 'card-img' || 'card-name' || 'card-text') {
-        console.log('aa')
+    if(e.target.classList == 'card' || e.target.classList == 'card-img' ||
+        e.target.classList == 'card-img-container' || e.target.classList == 'card-info-container' ||
+        e.target.classList == 'card-text' || e.target.classList == 'card-name' ) {
+        console.log(e.target)
 
     }
 });
