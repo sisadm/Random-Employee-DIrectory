@@ -1,14 +1,7 @@
 let userArray = [];
 const gallery = document.querySelector('#gallery');
 const body = document.querySelector('body');
-const modalDiv = document.querySelector('.modal-container');
-const modalImg = document.querySelector('modal-img');
-const modalName = document.querySelector('.modal-name');
-const modalEmail = document.querySelector('#email');
-const modalCity = document.querySelector('#city');
-const modalTel = document.querySelector('#tel');
-const modalLoc = document.querySelector('#location');
-const modalBday = document.querySelector('#bday');
+
 
 
 
@@ -95,20 +88,38 @@ function resultPush(data) {
 galleryDisplay(userArray);
 }
 
+// function calls
+
+modalPart();
+
 // display clicked card to modal
 
 function modalDisplay(id) {
+    const modalDivSelect = document.querySelector('.modal-container');
+    const modalImg = document.querySelector('.modal-img');
+    const modalName = document.querySelector('.modal-name');
+    const modalEmail = document.querySelector('#email');
+    const modalCity = document.querySelector('#city');
+    const modalTel = document.querySelector('#tel');
+    const modalLoc = document.querySelector('#location');
+    const modalBday = document.querySelector('#bday');
     const arrayElement = userArray[id];
-    modalDiv.style.display == 'block';
-    modalImg.setAttribute('src', arrayElement.pictures);
 
+    modalDivSelect.style.display = 'block';
+    modalImg.setAttribute('src', `${arrayElement.pictures}`);
+    modalName.innerHTML = arrayElement.name;
+    modalEmail.innerHTML = arrayElement.email;
+    modalCity.innerHTML = arrayElement.location.city;
+    modalTel.innerHTML = arrayElement.phone;
+    modalLoc.innerHTML = `${arrayElement.location.street}, 
+                            ${arrayElement.location.state}, ${arrayElement.location.country}, 
+                            ${arrayElement.location.postcode}`;
+    modalBday.innerHTML = arrayElement.bday;
 }
 
 
 
-// function calls
 
-modalPart();
 
 // event listener 
 
