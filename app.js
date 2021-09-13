@@ -71,7 +71,7 @@ function resultPush(data) {
         let Newdata = data[i];
         userArray.push({name: `${Newdata.name.first} ${Newdata.name.last}`,
                         email: `${Newdata.email}`,
-                        pictures:  `${Newdata.picture.medium}`,
+                        pictures:  `${Newdata.picture.large}`,
                         location: {
                                     city: `${Newdata.location.city}`,
                                     country: `${Newdata.location.country}`,
