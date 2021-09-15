@@ -5,6 +5,7 @@ const body = document.querySelector('body');
 
 
 
+
 // Functions
 
 // create modal and add to the page
@@ -95,7 +96,7 @@ modalPart();
 // display clicked card to modal
 
 function modalDisplay(id) {
-    const modalDivSelect = document.querySelector('.modal-container');
+    let modalDivSelect = document.querySelector('.modal-container');
     const modalImg = document.querySelector('.modal-img');
     const modalName = document.querySelector('.modal-name');
     const modalEmail = document.querySelector('#email');
@@ -123,7 +124,9 @@ function modalDisplay(id) {
 
 // event listener 
 
-gallery.addEventListener('click', e => {
+body.addEventListener('click', e => {
+
+    // Open card to pop up as modal
     if(e.target.classList == 'card' || e.target.classList == 'card-img' ||
         e.target.classList == 'card-img-container' || e.target.classList == 'card-info-container' ||
         e.target.classList == 'card-text' || e.target.classList == 'card-name' ) 
@@ -141,8 +144,11 @@ gallery.addEventListener('click', e => {
             } else {
                 modalDisplay(e.target.getAttribute('id'));
             }
-        
+    }
 
+    // Modal button interactions
+    if(e.target.classList == 'modal-close-btn' || e.target.nodeName == 'STRONG') {
+        document.querySelector('.modal-container').style.display = 'none';
     }
 });
 
