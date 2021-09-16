@@ -130,6 +130,14 @@ header h1 {
   border: 1px solid rgba(100, 100, 100, 0.3);
   transition: 0.4s ease-out;
 }
+.modal #arrowDiv {
+  position: absolute;
+  top: 50%;
+  transform: translate(-50%, 0);
+}
+.modal #arrowDiv .leftArrow {
+  left: 25%;
+}
 
 .modal-close-btn {
   position: absolute;

@@ -18,6 +18,23 @@
     border-radius: 0.25em;
     border: 1px solid rgba(100, 100, 100, 0.3);
     transition: .4s ease-out;
+
+
+
+      // arrow
+
+    #arrowDiv {
+        position: absolute;
+        top: 50%;
+        transform: translate(-50%, 0);
+
+
+        .leftArrow {
+            left: 25%;
+        }
+    }
+
+
 }
 
 .modal-close-btn {
@@ -79,4 +96,6 @@
     border-radius: 0.35em;
     transition: .4s ease-out;
     outline: none;
-  }
+}
+
+
