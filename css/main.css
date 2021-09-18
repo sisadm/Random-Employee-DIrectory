@@ -130,14 +130,6 @@ header h1 {
   border: 1px solid rgba(100, 100, 100, 0.3);
   transition: 0.4s ease-out;
 }
-.modal #arrowDiv {
-  position: absolute;
-  top: 50%;
-  transform: translate(-50%, 0);
-}
-.modal #arrowDiv .leftArrow {
-  left: 25%;
-}
 
 .modal-close-btn {
   position: absolute;
@@ -197,6 +189,35 @@ header h1 {
   border-radius: 0.35em;
   transition: 0.4s ease-out;
   outline: none;
+}
+
+#arrowLeft, #arrowRight {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 80px;
+  height: 60px;
+  cursor: pointer;
+}
+
+.leftArrow, .rightArrow {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 90%;
+  height: 10px;
+  background-color: #fff;
+  box-shadow: 0 3px 5px rgba(0, 0, 0, 0.2);
+}
+
+#arrowLeft {
+  left: calc(100% / 5);
+  right: -80%;
+}
+
+#arrowRight {
+  right: 25%;
 }
 
 @media (min-width: 768px) {

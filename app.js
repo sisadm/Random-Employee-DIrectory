@@ -15,11 +15,13 @@ function modalPart() {
     modalDiv.classList.add('modal-container');
     modalDiv.setAttribute('style', 'display: none');
     modalDiv.innerHTML = `
-        <div class='modal'>
-        <div id='arrowDiv'>
+            <div id='arrowLeft'>
             <div class='leftArrow'></div>
+        </div>
+        <div id='arrowRight'>
             <div class='rightArrow'></div>
         </div>
+        <div class='modal'>
             <button type='button' id='modal-close-btn' class='modal-close-btn'><strong>X</strong></button>
             <div class='modal-info-container'>
                 <img class="modal-img" src="" alt="profile picture">
