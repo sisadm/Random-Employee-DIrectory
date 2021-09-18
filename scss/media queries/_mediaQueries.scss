@@ -1,3 +1,12 @@
+@media (max-width: 767px) {
+
+    // arrow
+
+    #arrowLeft, #arrowRight {
+        display: none;
+    }
+}
+
 
 @media (min-width: 768px) {
     .header-inner-container {
@@ -19,6 +28,18 @@
 
     .modal {
         margin-top: 100px;
+    }
+
+
+    // arrow 
+
+    #arrowLeft {
+        left: 2em;
+    }
+    
+    
+    #arrowRight {
+        right: 2em;
     }
 }
 

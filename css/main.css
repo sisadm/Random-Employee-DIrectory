@@ -211,15 +211,11 @@ header h1 {
   box-shadow: 0 3px 5px rgba(0, 0, 0, 0.2);
 }
 
-#arrowLeft {
-  left: calc(100% / 5);
-  right: -80%;
+@media (max-width: 767px) {
+  #arrowLeft, #arrowRight {
+    display: none;
+  }
 }
-
-#arrowRight {
-  right: 25%;
-}
-
 @media (min-width: 768px) {
   .header-inner-container {
     display: flex;
@@ -240,6 +236,14 @@ header h1 {
 
   .modal {
     margin-top: 100px;
+  }
+
+  #arrowLeft {
+    left: 2em;
+  }
+
+  #arrowRight {
+    right: 2em;
   }
 }
 @media (min-width: 1024px) {

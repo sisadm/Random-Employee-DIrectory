@@ -15,7 +15,7 @@ function modalPart() {
     modalDiv.classList.add('modal-container');
     modalDiv.setAttribute('style', 'display: none');
     modalDiv.innerHTML = `
-            <div id='arrowLeft'>
+        <div id='arrowLeft'>
             <div class='leftArrow'></div>
         </div>
         <div id='arrowRight'>
