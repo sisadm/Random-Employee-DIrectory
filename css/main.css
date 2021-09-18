@@ -191,7 +191,8 @@ header h1 {
   outline: none;
 }
 
-#arrowLeft, #arrowRight {
+#outsideArrowL, #outsideArrowR,
+#insideArrowL, #insideArrowR {
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
@@ -207,8 +208,15 @@ header h1 {
   transform: translate(-50%, -50%);
   width: 90%;
   height: 10px;
-  background-color: #fff;
   box-shadow: 0 3px 5px rgba(0, 0, 0, 0.2);
+}
+
+#outsideArrowL .leftArrow, #outsideArrowR .rightArrow {
+  background-color: #fff;
+}
+
+#insideArrowL .leftArrow, #insideArrowR .rightArrow {
+  background-color: #000;
 }
 
 @media (max-width: 767px) {
@@ -238,11 +246,15 @@ header h1 {
     margin-top: 100px;
   }
 
-  #arrowLeft {
+  #insideArrowL, #insideArrowR {
+    display: none;
+  }
+
+  #outsideArrowL {
     left: 2em;
   }
 
-  #arrowRight {
+  #outsideArrowR {
     right: 2em;
   }
 }

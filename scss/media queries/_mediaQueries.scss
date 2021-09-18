@@ -33,14 +33,21 @@
 
     // arrow 
 
-    #arrowLeft {
+    // inside
+
+    #insideArrowL, #insideArrowR {
+        display: none;
+    }
+
+    // outside
+    #outsideArrowL  {
         left: 2em;
     }
-    
-    
-    #arrowRight {
+
+    #outsideArrowR  {
         right: 2em;
     }
+
 }
 
 
