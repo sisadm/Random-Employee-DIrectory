@@ -25,7 +25,7 @@ function modalPart() {
             <div id='insideArrowL'>
                 <div class='leftArrow'></div>
             </div>
-            <div id='isideArrowR'>
+            <div id='insideArrowR'>
                 <div class='rightArrow'></div>
             </div>
             <button type='button' id='modal-close-btn' class='modal-close-btn'><strong>X</strong></button>

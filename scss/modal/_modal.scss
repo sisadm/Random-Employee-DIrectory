@@ -118,3 +118,56 @@
     background-color: #000;
 }
 
+.rightArrow::after, .rightArrow::before,
+.leftArrow:after, .leftArrow:before {
+    content: "";
+    position: absolute;
+    width: 60%;
+    height: 10px;
+}
+
+// right
+
+.rightArrow::after, .rightArrow::before {
+    right: -8px;
+}
+
+#outsideArrowR .rightArrow::after,
+#outsideArrowR .rightArrow::before,
+#outsideArrowL .leftArrow::after,
+#outsideArrowL .leftArrow::before {
+    background-color: #fff;
+}
+
+#insideArrowR .rightArrow::after,
+#insideArrowR .rightArrow::before,
+#insideArrowL .leftArrow::after,
+#insideArrowL .leftArrow::before {
+    background-color: #000;
+}
+
+.rightArrow::after {
+    top: -12px;
+    transform: rotate(45deg);
+}
+
+.rightArrow::before {
+    top: 12px;
+    box-shadow: 0 3px 5px rgba(0, 0, 0, .2);
+    transform: rotate(-45deg);
+}
+
+// left
+.leftArrow:after, .leftArrow:before {
+    left: -8px;
+}
+
+.leftArrow::after {
+    top: -12px;
+    transform: rotate(135deg);
+}
+
+.leftArrow::before {
+    top: 12px;
+    transform: rotate(-135deg);
+}

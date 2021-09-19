@@ -219,9 +219,68 @@ header h1 {
   background-color: #000;
 }
 
+.rightArrow::after, .rightArrow::before,
+.leftArrow:after, .leftArrow:before {
+  content: "";
+  position: absolute;
+  width: 60%;
+  height: 10px;
+}
+
+.rightArrow::after, .rightArrow::before {
+  right: -8px;
+}
+
+#outsideArrowR .rightArrow::after,
+#outsideArrowR .rightArrow::before,
+#outsideArrowL .leftArrow::after,
+#outsideArrowL .leftArrow::before {
+  background-color: #fff;
+}
+
+#insideArrowR .rightArrow::after,
+#insideArrowR .rightArrow::before,
+#insideArrowL .leftArrow::after,
+#insideArrowL .leftArrow::before {
+  background-color: #000;
+}
+
+.rightArrow::after {
+  top: -12px;
+  transform: rotate(45deg);
+}
+
+.rightArrow::before {
+  top: 12px;
+  box-shadow: 0 3px 5px rgba(0, 0, 0, 0.2);
+  transform: rotate(-45deg);
+}
+
+.leftArrow:after, .leftArrow:before {
+  left: -8px;
+}
+
+.leftArrow::after {
+  top: -12px;
+  transform: rotate(135deg);
+}
+
+.leftArrow::before {
+  top: 12px;
+  transform: rotate(-135deg);
+}
+
 @media (max-width: 767px) {
-  #arrowLeft, #arrowRight {
+  #outsideArrowR, #outsideArrowL {
     display: none;
+  }
+
+  #insideArrowL {
+    left: 0.5em;
+  }
+
+  #insideArrowR {
+    right: 0.5em;
   }
 }
 @media (min-width: 768px) {
