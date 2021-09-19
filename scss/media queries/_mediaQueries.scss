@@ -1,9 +1,19 @@
 @media (max-width: 767px) {
 
     // arrow
-
-    #arrowLeft, #arrowRight {
+    // Outside
+    #outsideArrowR, #outsideArrowL {
         display: none;
+    }
+
+
+    //inside 
+    #insideArrowL  {
+        left: .5em;
+    }
+
+    #insideArrowR  {
+        right: .5em;
     }
 }
 
