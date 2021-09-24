@@ -179,14 +179,8 @@ header h1 {
   box-shadow: 0 3px 5px rgba(0, 0, 0, 0.2);
 }
 
-#outsideArrowL .leftArrow, #outsideArrowR .rightArrow {
-  background-color: #fff;
-}
-
-#insideArrowL .leftArrow, #insideArrowR .rightArrow {
-  background-color: #000;
-}
-
+#outsideArrowL .leftArrow,
+#outsideArrowR .rightArrow,
 #outsideArrowR .rightArrow::after,
 #outsideArrowR .rightArrow::before,
 #outsideArrowL .leftArrow::after,
@@ -194,11 +188,13 @@ header h1 {
   background-color: #fff;
 }
 
+#insideArrowL .leftArrow,
+#insideArrowR .rightArrow,
 #insideArrowR .rightArrow::after,
 #insideArrowR .rightArrow::before,
 #insideArrowL .leftArrow::after,
 #insideArrowL .leftArrow::before {
-  background-color: #000;
+  background-color: #c2b5b5;
 }
 
 .rightArrow::after, .rightArrow::before,
