@@ -137,3 +137,13 @@
     top: 12px;
     transform: rotate(-135deg);
 }
+
+// hover
+
+#outsideArrowL:hover {
+    animation: OutsideMoveLeft .7s ease-in-out infinite;   
+}
+
+#outsideArrowR:hover {
+    animation: OutsideMoveRight .7s ease-in-out infinite;   
+}
