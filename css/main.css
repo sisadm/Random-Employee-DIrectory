@@ -242,6 +242,14 @@ header h1 {
   animation: OutsideMoveRight 0.7s ease-in-out infinite;
 }
 
+#insideArrowL:hover {
+  animation: InsideMoveLeft 0.7s ease-in-out infinite;
+}
+
+#insideArrowR:hover {
+  animation: InsideMoveRight 0.7s ease-in-out infinite;
+}
+
 @media (max-width: 767px) {
   #outsideArrowR, #outsideArrowL {
     display: none;
@@ -356,30 +364,56 @@ header h1 {
     right: 2em;
   }
 }
-@keyframes OutsideMoveRight {
+@keyframes InsideMoveLeft {
   12.5% {
-    right: 1.8em;
+    left: 0.4em;
   }
   25% {
-    right: 1.6em;
+    left: 0.3em;
   }
   37.5% {
-    right: 1.8em;
+    left: 0.4em;
   }
   50% {
-    right: 2em;
+    left: 0.5em;
   }
   62.5% {
-    right: 2.2em;
+    left: 0.6em;
   }
   75% {
-    right: 2.4em;
+    left: 0.7em;
   }
   87.5% {
-    right: 2.2em;
+    left: 0.6em;
   }
   100% {
-    right: 2em;
+    left: 0.5em;
+  }
+}
+@keyframes InsideMoveRight {
+  12.5% {
+    right: 0.4em;
+  }
+  25% {
+    right: 0.3em;
+  }
+  37.5% {
+    right: 0.4em;
+  }
+  50% {
+    right: 0.5em;
+  }
+  62.5% {
+    right: 0.6em;
+  }
+  75% {
+    right: 0.7em;
+  }
+  87.5% {
+    right: 0.6em;
+  }
+  100% {
+    right: 0.5em;
   }
 }
 

@@ -138,7 +138,9 @@
     transform: rotate(-135deg);
 }
 
-// hover
+// arrow hover
+
+    // outside
 
 #outsideArrowL:hover {
     animation: OutsideMoveLeft .7s ease-in-out infinite;   
@@ -147,3 +149,13 @@
 #outsideArrowR:hover {
     animation: OutsideMoveRight .7s ease-in-out infinite;   
 }
+
+    // inside
+
+#insideArrowL:hover {
+    animation: InsideMoveLeft .7s ease-in-out infinite;   
+}
+
+#insideArrowR:hover {
+    animation: InsideMoveRight .7s ease-in-out infinite;   
+}    
