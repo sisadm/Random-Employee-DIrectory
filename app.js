@@ -109,6 +109,7 @@ modalPart();
 
 function modalDisplay(id) {
     let modalDivSelect = document.querySelector('.modal-container');
+    const modal = document.querySelector('.modal');
     const modalImg = document.querySelector('.modal-img');
     const modalName = document.querySelector('.modal-name');
     const modalEmail = document.querySelector('#email');
@@ -119,6 +120,8 @@ function modalDisplay(id) {
     const arrayElement = userArray[id];
 
     modalDivSelect.style.display = 'block';
+    modal.removeAttribute('id');
+    modal.setAttribute('id', id);
     modalImg.setAttribute('src', `${arrayElement.pictures}`);
     modalName.innerHTML = arrayElement.name;
     modalEmail.innerHTML = arrayElement.email;
