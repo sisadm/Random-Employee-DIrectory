@@ -73,7 +73,10 @@ function insertAfter(referenceNode, newNode) {
 
 function galleryDisplay(data) {
     for(let i = 0; i < data.length; i++) {
-        gallery.append(cardDisplay(data[i], i));
+        if(data[i].display == 'true') {
+            gallery.append(cardDisplay(data[i], i));
+        }
+        
     }
 }
 
@@ -138,18 +141,21 @@ function modalDisplay(id) {
     const modalBday = document.querySelector('#bday');
     const arrayElement = userArray[id];
 
-    modalDivSelect.style.display = 'block';
-    modal.removeAttribute('id');
-    modal.setAttribute('id', id);
-    modalImg.setAttribute('src', `${arrayElement.pictures}`);
-    modalName.innerHTML = arrayElement.name;
-    modalEmail.innerHTML = arrayElement.email;
-    modalCity.innerHTML = arrayElement.location.city;
-    modalTel.innerHTML = arrayElement.phone;
-    modalLoc.innerHTML = `${arrayElement.location.street}, 
-                            ${arrayElement.location.state}, ${arrayElement.location.country}, 
-                            ${arrayElement.location.postcode}`;
-    modalBday.innerHTML = arrayElement.bday;
+    if(arrayElement.display == 'true') {
+        modalDivSelect.style.display = 'block';
+        modal.removeAttribute('id');
+        modal.setAttribute('id', id);
+        modalImg.setAttribute('src', `${arrayElement.pictures}`);
+        modalName.innerHTML = arrayElement.name;
+        modalEmail.innerHTML = arrayElement.email;
+        modalCity.innerHTML = arrayElement.location.city;
+        modalTel.innerHTML = arrayElement.phone;
+        modalLoc.innerHTML = `${arrayElement.location.street}, 
+                                ${arrayElement.location.state}, ${arrayElement.location.country}, 
+                                ${arrayElement.location.postcode}`;
+        modalBday.innerHTML = arrayElement.bday;
+    }
+    
 }
 
 
@@ -157,6 +163,8 @@ function modalDisplay(id) {
 
 
 // event listener 
+
+    // click
 
 body.addEventListener('click', e => {
 
@@ -212,6 +220,14 @@ body.addEventListener('click', e => {
             modalDisplay(parseInt(modalNumber) + 1);
         }
     }
+});
+
+    // search box
+
+let searchInput = document.querySelector('.search-input');
+
+searchInput.addEventListener('input', (e) => {
+    console.log(searchInput.value);
 });
 
 
