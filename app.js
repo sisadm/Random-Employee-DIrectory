@@ -1,7 +1,7 @@
 let userArray = [];
 const gallery = document.querySelector('#gallery');
 const body = document.querySelector('body');
-
+const searchContainer = document.querySelector('.search-container');
 
 
 // fetch
@@ -16,6 +16,15 @@ fetch('https://randomuser.me/api/?results=12&nat=gb&name&location')
 
 
 // Functions
+
+function addSearch() {
+    searchContainer.innerHTML = `
+        <form action="#" method="get">
+        <input type="search" id="search-input" class="search-input" placeholder="Search...">
+        <input type="submit" value="&#x1F50D;" id="search-submit" class="search-submit">
+        </form>
+    `;
+}
 
 // create modal and add to the page
 
@@ -113,6 +122,7 @@ galleryDisplay(userArray);
 // function calls
 
 modalPart();
+addSearch();
 
 // display clicked card to modal
 
@@ -171,7 +181,8 @@ body.addEventListener('click', e => {
     }
 
     // Modal button interactions
-    if(e.target.classList == 'modal-close-btn' || e.target.nodeName == 'STRONG') {
+    if(e.target.classList == 'modal-close-btn' || e.target.nodeName == 'STRONG' ||
+        e.target.classList == 'modal-container') {
         document.querySelector('.modal-container').style.display = 'none';
     }
 
