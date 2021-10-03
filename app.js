@@ -4,6 +4,15 @@ const body = document.querySelector('body');
 
 
 
+// fetch
+
+fetch('https://randomuser.me/api/?results=12&nat=gb&name&location')
+    .then(response => response.json())
+    .then(data => resultPush(data.results))
+    .catch((error) => {
+        console.error('Error:', error);
+    });
+
 
 
 // Functions
@@ -165,6 +174,33 @@ body.addEventListener('click', e => {
     if(e.target.classList == 'modal-close-btn' || e.target.nodeName == 'STRONG') {
         document.querySelector('.modal-container').style.display = 'none';
     }
+
+    // arrow move to left 
+
+    if(e.target.getAttribute('id') == 'outsideArrowL' || 
+        e.target.getAttribute('id') == 'insideArrowL' ||
+        e.target.classList == 'leftArrow'){
+        let modalNumber = document.querySelector('.modal').getAttribute('id');
+        if(modalNumber == 0) {
+            modalDisplay(userArray.length - 1);
+        } else {
+            modalDisplay(modalNumber - 1);
+        }
+    }
+
+    // arrow move to right
+
+    if(e.target.getAttribute('id') == 'outsideArrowR' || 
+        e.target.getAttribute('id') == 'insideArrowR' ||
+        e.target.classList == 'rightArrow'){
+        let modalNumber = document.querySelector('.modal').getAttribute('id');
+        console.log(modalNumber)
+        if(modalNumber == userArray.length - 1) {
+            modalDisplay(userArray.length - userArray.length);
+        } else {
+            modalDisplay(parseInt(modalNumber) + 1);
+        }
+    }
 });
 
 
@@ -172,10 +208,3 @@ body.addEventListener('click', e => {
 
 
 
-// fetch
-
-fetch('https://randomuser.me/api/?results=12&nat=gb&name&location')
-    .then(response => response.json())
-    .then(data => resultPush(data.results))
-    .catch((error) => {
-        console.error('Error:', error)});
