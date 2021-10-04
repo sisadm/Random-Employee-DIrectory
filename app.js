@@ -122,6 +122,21 @@ function resultPush(data) {
 galleryDisplay(userArray);
 }
 
+// function check modal cards display
+
+function modalCheck() {
+    let modalDivs = document.querySelectorAll('.card');
+    for(let i = 0; i < userArray.length; i++) {
+        if(userArray[i].display == 'false') {
+            modalDivs[i].style.display = 'none';
+        }
+        else {
+            modalDivs[i].style.display = '';
+        }
+    }
+    
+}
+
 // function calls
 
 modalPart();
@@ -237,8 +252,8 @@ searchInput.addEventListener('input', (e) => {
             userArray[i].display == 'true';
             console.log(userArray[i].name)
         }
+        modalCheck();
     }
-    
 
 });
 
