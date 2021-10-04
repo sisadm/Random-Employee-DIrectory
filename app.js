@@ -226,8 +226,20 @@ body.addEventListener('click', e => {
 
 let searchInput = document.querySelector('.search-input');
 
-searchInput.addEventListener('input', (e) => {
-    console.log(searchInput.value);
+searchInput.addEventListener('input', (e) => {    
+    let cardDivs = document.querySelectorAll('.card');
+    for(let i = 0; i<userArray.length; i++) {
+        if(!userArray[i].name.toLowerCase().includes(searchInput.value.toLowerCase())){
+            userArray[i].display == 'false';
+            
+        } 
+        else {
+            userArray[i].display == 'true';
+            console.log(userArray[i].name)
+        }
+    }
+    
+
 });
 
 
