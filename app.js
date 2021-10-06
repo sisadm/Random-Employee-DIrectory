@@ -73,7 +73,7 @@ function insertAfter(referenceNode, newNode) {
 
 function galleryDisplay(data) {
     for(let i = 0; i < data.length; i++) {
-        if(data[i].display == 'true') {
+        if(data[i].display == true) {
             gallery.append(cardDisplay(data[i], i));
         }
         
@@ -115,7 +115,7 @@ function resultPush(data) {
                                     },
                         phone: `${Newdata.phone}`,
                         bday: `${Newdata.dob.date}`,
-                        display: `true`
+                        display: true
                         });
     }
 
@@ -127,11 +127,12 @@ galleryDisplay(userArray);
 function modalCheck() {
     let modalDivs = document.querySelectorAll('.card');
     for(let i = 0; i < userArray.length; i++) {
-        if(userArray[i].display == 'false') {
-            modalDivs[i].style.display = 'none';
+        if(userArray[i].display == false) {
+            
+            modalDivs[i].classList.add('hide');
         }
         else {
-            modalDivs[i].style.display = '';
+            modalDivs[i].classList.remove('hide');
         }
     }
     
@@ -156,7 +157,7 @@ function modalDisplay(id) {
     const modalBday = document.querySelector('#bday');
     const arrayElement = userArray[id];
 
-    if(arrayElement.display == 'true') {
+    if(arrayElement.display == true) {
         modalDivSelect.style.display = 'block';
         modal.removeAttribute('id');
         modal.setAttribute('id', id);
@@ -241,20 +242,18 @@ body.addEventListener('click', e => {
 
 let searchInput = document.querySelector('.search-input');
 
-searchInput.addEventListener('input', (e) => {    
-    let cardDivs = document.querySelectorAll('.card');
+searchInput.addEventListener('input', () => {    
     for(let i = 0; i<userArray.length; i++) {
         if(!userArray[i].name.toLowerCase().includes(searchInput.value.toLowerCase())){
-            userArray[i].display == 'false';
+            userArray[i].display = false;
             
         } 
         else {
-            userArray[i].display == 'true';
-            console.log(userArray[i].name)
+            userArray[i].display = true;
+            
         }
-        modalCheck();
     }
-
+    modalCheck();
 });
 
 
