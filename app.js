@@ -124,8 +124,10 @@ galleryDisplay(userArray);
 
 // function check modal cards display
 
+
+
 function modalCheck() {
-    let modalDivs = document.querySelectorAll('.card');
+    const modalDivs = document.querySelectorAll('.card');
     for(let i = 0; i < userArray.length; i++) {
         if(userArray[i].display == false) {
             
@@ -135,8 +137,27 @@ function modalCheck() {
             modalDivs[i].classList.remove('hide');
         }
     }
-    
 }
+
+// function to check display is true or false when click arrow
+
+function displayCheck(num, direction) {
+    const modalDivs = document.querySelectorAll('.card');
+    
+
+    // going to right
+    if(direction == 'positive'){
+        for(let i = parseInt(num) + 1; i < userArray.length; i++){
+            if(i == userArray.length - 1) {
+                i = 0;
+            }             
+            if(!modalDivs[i].classList.contains('hide')) {
+                return modalDisplay(i);
+            }                
+        }
+    }
+}
+
 
 // function calls
 
@@ -146,6 +167,7 @@ addSearch();
 // display clicked card to modal
 
 function modalDisplay(id) {
+    console.log('modal display', id);
     let modalDivSelect = document.querySelector('.modal-container');
     const modal = document.querySelector('.modal');
     const modalImg = document.querySelector('.modal-img');
@@ -216,6 +238,7 @@ body.addEventListener('click', e => {
         e.target.getAttribute('id') == 'insideArrowL' ||
         e.target.classList == 'leftArrow'){
         let modalNumber = document.querySelector('.modal').getAttribute('id');
+
         if(modalNumber == 0) {
             modalDisplay(userArray.length - 1);
         } else {
@@ -229,12 +252,12 @@ body.addEventListener('click', e => {
         e.target.getAttribute('id') == 'insideArrowR' ||
         e.target.classList == 'rightArrow'){
         let modalNumber = document.querySelector('.modal').getAttribute('id');
-        console.log(modalNumber)
-        if(modalNumber == userArray.length - 1) {
-            modalDisplay(userArray.length - userArray.length);
-        } else {
-            modalDisplay(parseInt(modalNumber) + 1);
-        }
+        displayCheck(modalNumber, 'positive');
+        // if(modalNumber == userArray.length - 1) {
+        //     modalDisplay(userArray.length - userArray.length);
+        // } else {
+        //     modalDisplay(parseInt(modalNumber) + 1);
+        // }
     }
 });
 
