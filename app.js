@@ -156,6 +156,20 @@ function displayCheck(num, direction) {
             }                
         }
     }
+
+    if(direction == 'negative'){
+        for(let i = parseInt(num) - 1; i < userArray.length; i--){
+            if(i == 0 && !modalDivs[i].classList.contains('hide')) {
+                return modalDisplay(i);
+            }
+            if(i == 0) {
+                i = userArray.length - 1;
+            }             
+            if(!modalDivs[i].classList.contains('hide')) {
+                return modalDisplay(i);
+            }                
+        }
+    }
 }
 
 
@@ -167,7 +181,6 @@ addSearch();
 // display clicked card to modal
 
 function modalDisplay(id) {
-    console.log('modal display', id);
     let modalDivSelect = document.querySelector('.modal-container');
     const modal = document.querySelector('.modal');
     const modalImg = document.querySelector('.modal-img');
@@ -238,12 +251,7 @@ body.addEventListener('click', e => {
         e.target.getAttribute('id') == 'insideArrowL' ||
         e.target.classList == 'leftArrow'){
         let modalNumber = document.querySelector('.modal').getAttribute('id');
-
-        if(modalNumber == 0) {
-            modalDisplay(userArray.length - 1);
-        } else {
-            modalDisplay(modalNumber - 1);
-        }
+        displayCheck(modalNumber, 'negative');
     }
 
     // arrow move to right
@@ -253,11 +261,6 @@ body.addEventListener('click', e => {
         e.target.classList == 'rightArrow'){
         let modalNumber = document.querySelector('.modal').getAttribute('id');
         displayCheck(modalNumber, 'positive');
-        // if(modalNumber == userArray.length - 1) {
-        //     modalDisplay(userArray.length - userArray.length);
-        // } else {
-        //     modalDisplay(parseInt(modalNumber) + 1);
-        // }
     }
 });
 
