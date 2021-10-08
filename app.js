@@ -162,9 +162,9 @@ function displayCheck(num, direction) {
             if(i == 0 && !modalDivs[i].classList.contains('hide')) {
                 return modalDisplay(i);
             }
-            if(i == 0) {
-                i = userArray.length - 1;
-            }             
+            if(i == -1) {
+                i = parseInt(userArray.length) - 1;
+            }      
             if(!modalDivs[i].classList.contains('hide')) {
                 return modalDisplay(i);
             }                
