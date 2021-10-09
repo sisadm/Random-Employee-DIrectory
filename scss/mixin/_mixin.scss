@@ -1,0 +1,3 @@
+@mixin randomBorderRaidus() {
+    border-radius: percentage(randomNumber()) percentage(randomNumber()) percentage(randomNumber()) percentage(randomNumber());
+}
