@@ -1,4 +1,108 @@
 @import url("https://fonts.googleapis.com/css?family=Nunito");
+@keyframes OutsideMoveLeft {
+  12.5% {
+    left: 1.8em;
+  }
+  25% {
+    left: 1.6em;
+  }
+  37.5% {
+    left: 1.8em;
+  }
+  50% {
+    left: 2em;
+  }
+  62.5% {
+    left: 2.2em;
+  }
+  75% {
+    left: 2.4em;
+  }
+  87.5% {
+    left: 2.2em;
+  }
+  100% {
+    left: 2em;
+  }
+}
+@keyframes OutsideMoveRight {
+  12.5% {
+    right: 1.8em;
+  }
+  25% {
+    right: 1.6em;
+  }
+  37.5% {
+    right: 1.8em;
+  }
+  50% {
+    right: 2em;
+  }
+  62.5% {
+    right: 2.2em;
+  }
+  75% {
+    right: 2.4em;
+  }
+  87.5% {
+    right: 2.2em;
+  }
+  100% {
+    right: 2em;
+  }
+}
+@keyframes InsideMoveLeft {
+  12.5% {
+    left: 0.4em;
+  }
+  25% {
+    left: 0.3em;
+  }
+  37.5% {
+    left: 0.4em;
+  }
+  50% {
+    left: 0.5em;
+  }
+  62.5% {
+    left: 0.6em;
+  }
+  75% {
+    left: 0.7em;
+  }
+  87.5% {
+    left: 0.6em;
+  }
+  100% {
+    left: 0.5em;
+  }
+}
+@keyframes InsideMoveRight {
+  12.5% {
+    right: 0.4em;
+  }
+  25% {
+    right: 0.3em;
+  }
+  37.5% {
+    right: 0.4em;
+  }
+  50% {
+    right: 0.5em;
+  }
+  62.5% {
+    right: 0.6em;
+  }
+  75% {
+    right: 0.7em;
+  }
+  87.5% {
+    right: 0.6em;
+  }
+  100% {
+    right: 0.5em;
+  }
+}
 * {
   box-sizing: border-box;
 }
@@ -11,7 +115,8 @@ html, body {
 body {
   font-family: "Nunito", sans-serif;
   text-align: center;
-  background: rgba(235, 235, 235, 0.9);
+  background: #eeaeca;
+  background: linear-gradient(90deg, #eeaeca -10%, #485f9c 120%);
 }
 
 header {
@@ -82,10 +187,10 @@ header h1 {
   margin: 10px 10px 20px;
   padding: 10px;
   background: rgba(245, 245, 245, 0.9);
-  border-radius: 0.25em;
   border: 1px solid rgba(50, 50, 50, 0.3);
   transition: 0.4s ease-out;
   overflow: hidden;
+  border-radius: 94.0097690096% 30.9843904943% 84.3048047724% 49.8265823441%;
 }
 
 .card-img {
@@ -314,110 +419,6 @@ header h1 {
   .btn:hover {
     background: white;
     color: #191919;
-  }
-}
-@keyframes OutsideMoveLeft {
-  12.5% {
-    left: 1.8em;
-  }
-  25% {
-    left: 1.6em;
-  }
-  37.5% {
-    left: 1.8em;
-  }
-  50% {
-    left: 2em;
-  }
-  62.5% {
-    left: 2.2em;
-  }
-  75% {
-    left: 2.4em;
-  }
-  87.5% {
-    left: 2.2em;
-  }
-  100% {
-    left: 2em;
-  }
-}
-@keyframes OutsideMoveRight {
-  12.5% {
-    right: 1.8em;
-  }
-  25% {
-    right: 1.6em;
-  }
-  37.5% {
-    right: 1.8em;
-  }
-  50% {
-    right: 2em;
-  }
-  62.5% {
-    right: 2.2em;
-  }
-  75% {
-    right: 2.4em;
-  }
-  87.5% {
-    right: 2.2em;
-  }
-  100% {
-    right: 2em;
-  }
-}
-@keyframes InsideMoveLeft {
-  12.5% {
-    left: 0.4em;
-  }
-  25% {
-    left: 0.3em;
-  }
-  37.5% {
-    left: 0.4em;
-  }
-  50% {
-    left: 0.5em;
-  }
-  62.5% {
-    left: 0.6em;
-  }
-  75% {
-    left: 0.7em;
-  }
-  87.5% {
-    left: 0.6em;
-  }
-  100% {
-    left: 0.5em;
-  }
-}
-@keyframes InsideMoveRight {
-  12.5% {
-    right: 0.4em;
-  }
-  25% {
-    right: 0.3em;
-  }
-  37.5% {
-    right: 0.4em;
-  }
-  50% {
-    right: 0.5em;
-  }
-  62.5% {
-    right: 0.6em;
-  }
-  75% {
-    right: 0.7em;
-  }
-  87.5% {
-    right: 0.6em;
-  }
-  100% {
-    right: 0.5em;
   }
 }
 
